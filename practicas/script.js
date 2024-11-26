@@ -87,38 +87,160 @@
 // account.deposit(100);
 // account.withdraw(50);
 // console.log(account.amount);
+//
+// const user = {
+//   name: "Alex",
+//   lastName: "Bauer",
+//   age: 33,
+//   gender: "male",
+//   city: "Berlin",
+//   showFullName() {
+//     return this.name + " " + this.lastName;
+//   },
+// };
+//
+// // Objects Constructor
+//
+// function Person() {
+//   this.name = "";
+//   this.lastName = "";
+//   this.age = 0;
+//   this.gender = "";
+//   this.city = "";
+//   this.showFullName = function () {
+//     return this.name + " " + this.lastName;
+//   };
+// }
+//
+// const user2 = new Person();
+//
+// user2.name = "John";
+// user2.lastName = "Doe";
+// user2.age = 21;
+// user2.gender = "male";
+// user2.city = "Hessen";
+//
+// console.log(user2);
+// console.log(user2.showFullName());
+//
+// function Person() {
+//   this.name = "";
+//   this.lastName = "";
+//   this.age = 0;
+//   this.gender = "";
+//   this.city = "";
+//   this.showFullName = function () {
+//     return this.name + " " + this.lastName;
+//   };
+// }
+//
+// let person1 = new Person();
+// let person2 = new Person();
+//
+// person1.name = "John";
+// person1.lastName = "Doe";
+// person1.age = 21;
+// person1.gender = "male";
+// person1.city = "Hessen";
+//
+// console.log(person1);
+// console.log(person2);
+//
+// class Company {
+//   constructor(name) {
+//     let employees = [];
+//     this.name = name;
+//
+//     this.getEmployees = function () {
+//       return employees;
+//     };
+//
+//     this.addEmployee = function (employee) {
+//       employees.push(employee);
+//     };
+//   }
+// }
+//
+// const company = new Company("ACME");
+//
+// console.log(company);
+// company.addEmployee("John");
+// company.addEmployee("Eva");
+// company.addEmployee("Max");
+//
+// console.log(company.getEmployees());
+//
+//
+//class Person {
+//  constructor(name, lastName) {
+//    this.name = name;
+//    this.lastName = lastName;
+//  }
+//}
+//
+//class Programmer extends Person {
+//  constructor(name, lastName, language) {
+//    super(name, lastName);
+//    this.language = language;
+//  }
+//}
+//
+//let person = new Person("John", "Doe");
+//let programmer = new Programmer("Ana", "Armas", "Javascript");
+//
+//console.log(person);
+//console.log(programmer);
+//
+// // sobrecarga de parametros
+// function sum(a = 0, b = 0, c = 0) {
+//   return a + b + c;
+// }
+// console.log(sum(1, 2));
+// console.log(sum(1, 2, 3));
+// console.log(sum(123));
+//
+// class Stack {
+//   constructor() {
+//     this.items = [];
+//     this.add = (item) => {
+//       this.items.push(typeof item);
+//     };
+//   }
+// }
+//
+// let stack1 = new Stack();
+// let stack2 = new Stack();
+//
+// stack1.add(1);
+// stack1.add("hello world");
+// stack1.add(true);
+// stack1.add(3.14);
+// stack1.add(null);
+// console.log(stack1);
 
-const user = {
-  name: "Alex",
-  lastName: "Bauer",
-  age: 33,
-  gender: "male",
-  city: "Berlin",
-  showFullName() {
-    return this.name + " " + this.lastName;
-  },
-};
-
-// Objects Constructor
-
-function Person() {
-  this.name = "";
-  this.lastName = "";
-  this.age = 0;
-  this.gender = "";
-  this.city = "";
-  this.showFullName = function () {
-    return this.name + " " + this.lastName;
-  };
+class Person {
+  constructor(name, lastName) {
+    this.name = name;
+    this.lastName = lastName;
+  }
 }
 
-const user2 = new Person();
+class Programmer extends Person {
+  constructor(name, lastName, language) {
+    super(name, lastName);
+    this.language = language;
+  }
+}
 
-user2.name = "John";
-user2.lastName = "Doe";
-user2.age = 21;
-user2.gender = "male";
-user2.city = "Hessen";
+let person = new Person("John", "Doe");
+let programmer = new Programmer("Ana", "Armas", "Javascript");
 
-console.log(user2);
-console.log(user2.showFullName());
+console.log(person);
+console.log(programmer);
+
+function fullName(p) {
+  return p.name + " " + p.lastName;
+}
+
+console.log(fullName(person));
+console.log(fullName(programmer));
